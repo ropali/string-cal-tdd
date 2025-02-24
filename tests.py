@@ -36,3 +36,8 @@ def test_negative_numbers():
     with pytest.raises(ValueError) as excinfo:
         calculator.add("1,-2,3,-4")
     assert "negatives not allowed: -2, -4" in str(excinfo.value)
+
+
+def test_ignore_over_1000():
+    calculator = StringCalculator()
+    assert calculator.add("2,1001") == 2
