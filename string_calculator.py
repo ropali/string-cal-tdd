@@ -7,4 +7,10 @@ class StringCalculator:
         if len(numbers) == 1:
             return int(numbers)
         
+
+        delimiters = [",", "\n"]
+        
+        for delimiter in delimiters:
+            numbers = numbers.replace(delimiter, ",")
+        
         return sum(int(num) for num in numbers.split(","))
