@@ -1,4 +1,7 @@
 
+import re
+
+
 class StringCalculator:
     def add(self, numbers: str) -> int:
         if not numbers:
@@ -13,8 +16,17 @@ class StringCalculator:
         # Check for custom delimiter
         if numbers.startswith("//"):
             delimiter_line, numbers = numbers.split("\n", 1)
-            delimiter = delimiter_line[2:]
-            delimiters.append(delimiter)
+            # delimiter = delimiter_line[2:]
+            # delimiters.append(delimiter)
+
+            # Handle multiple delimiters in brackets
+            if "[" in delimiter_line:
+                # Extract all delimiters using regex
+                custom_delimiters = re.findall(r'\[(.*?)\]', delimiter_line)
+                delimiters.extend(custom_delimiters)
+            else:
+                # Single custom delimiter without brackets
+                delimiters.append(delimiter_line[2:])
             
         for delimiter in delimiters:
             numbers = numbers.replace(delimiter, ",")
