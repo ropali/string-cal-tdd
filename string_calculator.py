@@ -20,4 +20,12 @@ class StringCalculator:
             numbers = numbers.replace(delimiter, ",")
 
         
+        nums = [int(num) for num in numbers.split(",")]
+
+        negatives = [num for num in nums if num < 0]
+
+        if negatives:
+            raise ValueError(f"negatives not allowed: {', '.join(map(str, negatives))}")
+
+        
         return sum(int(num) for num in numbers.split(","))
