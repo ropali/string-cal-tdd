@@ -27,4 +27,6 @@ class StringCalculator:
         if negatives:
             raise ValueError(f"negatives not allowed: {', '.join(map(str, negatives))}")
         
+        nums = [num for num in nums if num <= 1000]
+        
         return sum(nums)
