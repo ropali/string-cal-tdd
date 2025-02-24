@@ -10,7 +10,14 @@ class StringCalculator:
 
         delimiters = [",", "\n"]
         
+        # Check for custom delimiter
+        if numbers.startswith("//"):
+            delimiter_line, numbers = numbers.split("\n", 1)
+            delimiter = delimiter_line[2:]
+            delimiters.append(delimiter)
+            
         for delimiter in delimiters:
             numbers = numbers.replace(delimiter, ",")
+
         
         return sum(int(num) for num in numbers.split(","))
