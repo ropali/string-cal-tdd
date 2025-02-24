@@ -29,3 +29,10 @@ def test_newlines_as_separators():
 def test_custom_delimiter():
     calculator = StringCalculator()
     assert calculator.add("//;\n1;2") == 3
+
+
+def test_negative_numbers():
+    calculator = StringCalculator()
+    with pytest.raises(ValueError) as excinfo:
+        calculator.add("1,-2,3,-4")
+    assert "negatives not allowed: -2, -4" in str(excinfo.value)
