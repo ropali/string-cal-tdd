@@ -1,7 +1,7 @@
 [project]
-name = "incubyte-tdd-string-cal"
+name = "tdd-string-cal"
 version = "0.1.0"
-description = "Add your description here"
+description = "A string calculator implementation using Test-Driven Development (TDD) approach."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
