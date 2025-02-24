@@ -27,7 +27,7 @@ string-cal-tdd/
 ## Requirements
 
 - Python 3.12 or higher
-- uv package manager
+- [uv](https://docs.astral.sh/uv/) package manager 
 
 ## Setup
 
