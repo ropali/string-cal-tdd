@@ -16,9 +16,7 @@ class StringCalculator:
         # Check for custom delimiter
         if numbers.startswith("//"):
             delimiter_line, numbers = numbers.split("\n", 1)
-            # delimiter = delimiter_line[2:]
-            # delimiters.append(delimiter)
-
+            
             # Handle multiple delimiters in brackets
             if "[" in delimiter_line:
                 # Extract all delimiters using regex
