@@ -1,6 +1,7 @@
 import pytest
 from string_calculator import StringCalculator
 
+
 def test_empty_string():
     calculator = StringCalculator()
     assert calculator.add("") == 0
@@ -15,7 +16,7 @@ def test_two_numbers():
     calculator = StringCalculator()
     assert calculator.add("1,2") == 3
 
-    
+
 def test_multiple_numbers():
     calculator = StringCalculator()
     assert calculator.add("1,2,3,4,5") == 15
@@ -42,10 +43,17 @@ def test_ignore_over_1000():
     calculator = StringCalculator()
     assert calculator.add("2,1001") == 2
 
+
 def test_longer_delimiter():
     calculator = StringCalculator()
     assert calculator.add("//[***]\n1***2***3") == 6
 
+
 def test_multiple_delimiters():
     calculator = StringCalculator()
     assert calculator.add("//[*][%]\n1*2%3") == 6
+
+
+def test_multiple_long_delimiters():
+    calculator = StringCalculator()
+    assert calculator.add("//[**][%%]\n1**2%%3") == 6
