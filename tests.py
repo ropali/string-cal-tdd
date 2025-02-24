@@ -19,3 +19,8 @@ def test_two_numbers():
 def test_multiple_numbers():
     calculator = StringCalculator()
     assert calculator.add("1,2,3,4,5") == 15
+
+
+def test_newlines_as_separators():
+    calculator = StringCalculator()
+    assert calculator.add("1\n2,3") == 6
