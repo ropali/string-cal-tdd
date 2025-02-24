@@ -26,6 +26,5 @@ class StringCalculator:
 
         if negatives:
             raise ValueError(f"negatives not allowed: {', '.join(map(str, negatives))}")
-
         
-        return sum(int(num) for num in numbers.split(","))
+        return sum(nums)
